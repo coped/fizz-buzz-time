@@ -1,68 +1,36 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Fizz Buzz Time
 
-## Available Scripts
+## About
+This is a [Fizz Buzz](https://en.wikipedia.org/wiki/Fizz_buzz) timer. This app was built using the React framework, and bootstrapped with the `create-react-app` module.
 
-In the project directory, you can run:
+## Getting started
+You can visit a live version of this application using this link: https://master.de19nf3x1gwvx.amplifyapp.com/.
 
-### `yarn start`
+## Learn more
+The live version of the application is built from the master branch of the app's github repository, which can be found here: https://github.com/coped/fizz-buzz-time.
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Setting up locally
+Instructions for setting up this app on your machine are built upon the following assumptions:
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+* You are working on a unix-based operating system (installation on a Windows OS may vary).
 
-### `yarn test`
+* You have node installed (if that isn't the case, visit the [Node doumentation](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) for more information).
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+* You have [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) installed.
 
-### `yarn build`
+To set this application up locally on your machine, follow these steps from a command-line interface:
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. Download and clone this application in your desired directory with `git clone git@github.com:coped/fizz-buzz-time.git`
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+2. Navigate to the project's root directory, e.g. `cd fizz-buzz-time`
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+3. Download the application's necessary dependencies with `yarn install` or `npm install`
 
-### `yarn eject`
+You should now have a working version of the application on your machine!
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+You can run the application on your machine locally with `yarn start` or `npm start`. From there, you can visit the application at http://localhost:3000.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+You can also run the application's testing suite by running `yarn test` or `npm test`.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+## Contact and support
+If you have any questions or concerns, feel free to send me an email at dennisaaroncope@gmail.com.
