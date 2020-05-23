@@ -1,26 +1,33 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import "App.css";
+import { Timer } from "components/timer";
+import { Options } from "components/options";
+import { Button } from "components/common";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export default class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      showTimer: false,
+    };
+
+    this.toggleShowTimer = this.toggleShowTimer.bind(this);
+  }
+
+  toggleShowTimer() {
+    this.setState({ showTimer: !this.state.showTimer });
+  }
+
+  render() {
+    const { showTimer } = this.state;
+    return (
+      <div id="App">
+        {showTimer ? (
+          <Timer toggleShowTimer={this.toggleShowTimer} />
+        ) : (
+          <Options toggleShowTimer={this.toggleShowTimer} />
+        )}
+      </div>
+    );
+  }
 }
-
-export default App;
