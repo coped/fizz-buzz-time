@@ -1,64 +1,23 @@
-import React, { Component } from "react";
+import React from "react";
 
-export default class Timer extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      count: 0,
-      counting: false,
-    };
+export default function Timer(props) {
 
-    this.formattedTime = this.formattedTime.bind(this);
-    this.startTimer = this.startTimer.bind(this);
-    this.stopTimer = this.stopTimer.bind(this);
-    this.incrementCount = this.incrementCount.bind(this);
-    this.pad = this.pad.bind(this);
-    this.timerOutput = this.timerOutput.bind(this);
-    this.fizzBuzzOutput = this.fizzBuzzOutput.bind(this);
-    this.secondsToTime = this.secondsToTime.bind(this);
-  }
+  const timerOutput = (count) => {
+    return formattedTime(count);
+  };
 
-  // Lifecycle methods
-
-  componentWillUnmount() {
-    clearInterval(this.countInterval);
-  }
-
-  // Component methods
-
-  startTimer() {
-    if (!this.state.counting) {
-      this.countInterval = setInterval(this.incrementCount, 1000);
-      this.setState({ counting: true });
-    }
-  }
-
-  stopTimer() {
-    if (this.state.counting) {
-      clearInterval(this.countInterval);
-      this.setState({ counting: false });
-    } else {
-      this.setState({ count: 0 });
-    }
-  }
-
-  incrementCount() {
-    if (this.state.count >= 35999) this.setState({ count: 0 });
-    this.setState({ count: this.state.count + 1 });
-  }
-
-  formattedTime(totalSeconds) {
-    const time = this.secondsToTime(totalSeconds);
+  const formattedTime = (totalSeconds) => {
+    const time = secondsToTime(totalSeconds);
     return (
-      this.pad(time.hours, 1) +
+      pad(time.hours, 1) +
       ":" +
-      this.pad(time.minutes, 2) +
+      pad(time.minutes, 2) +
       ":" +
-      this.pad(time.seconds, 2)
+      pad(time.seconds, 2)
     );
-  }
+  };
 
-  secondsToTime(totalSeconds) {
+  const secondsToTime = (totalSeconds) => {
     const secondsIn = {
       anHour: 3600,
       aMinute: 60,
@@ -77,43 +36,36 @@ export default class Timer extends Component {
     }
     seconds = totalSeconds;
     return { hours, minutes, seconds };
-  }
+  };
 
-  pad(s, n) {
+  const pad = (s, n) => {
     return s.toString().padStart(n, "0");
-  }
+  };
 
-  timerOutput() {
-    return this.formattedTime(this.state.count);
-  }
-
-  fizzBuzzOutput() {
-    const { fizzBuzzValues } = this.props;
+  const fizzBuzzOutput = (fizz, buzz, count) => {
     let output = "";
-    if (fizzBuzzValues && this.state.count !== 0) {
-      const { fizz, buzz } = fizzBuzzValues;
-      if (this.state.count % fizz === 0) output += "Fizz";
-      if (this.state.count % buzz === 0) output += "Buzz";
+    if (count !== 0) {
+      if (count % fizz === 0) output += "Fizz";
+      if (count % buzz === 0) output += "Buzz";
     }
     return output;
-  }
+  };
 
-  render() {
-    const { toggleShowTimer } = this.props;
-    return (
-      <div id="Timer">
-        <button id="to-options" onClick={toggleShowTimer} type="button">
-          {"< Set times"}
-        </button>
-        <h1 id="timer-output">{this.timerOutput()}</h1>
-        <h1 id="fizz-buzz-output">{this.fizzBuzzOutput()}</h1>
-        <button id="start-timer" onClick={this.startTimer} type="button">
-          Start timer
-        </button>
-        <button id="stop-timer" onClick={this.stopTimer} type="button">
-          Stop / reset timer
-        </button>
-      </div>
-    );
-  }
+  const { toggleShowTimer, startTimer, stopTimer, count, fizz, buzz } = props;
+
+  return (
+    <div id="Timer">
+      <button id="to-options" onClick={toggleShowTimer} type="button">
+        {"< Set times"}
+      </button>
+      <h1 id="timer-output">{timerOutput(count)}</h1>
+      <h1 id="fizz-buzz-output">{fizzBuzzOutput(fizz, buzz, count)}</h1>
+      <button id="start-timer" onClick={startTimer} type="button">
+        Start timer
+      </button>
+      <button id="stop-timer" onClick={stopTimer} type="button">
+        Stop / reset timer
+      </button>
+    </div>
+  );
 }

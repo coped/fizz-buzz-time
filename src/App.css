@@ -13,6 +13,10 @@
   color: white;
 }
 
+.bold {
+  font-weight: bold;
+}
+
 /* this class is for testing purposes */
 .test {
   color: blue;
