@@ -14,7 +14,9 @@ export default class Options extends Component {
     return (
       <div id="Options">
         <p>I am options!</p>
-        <Button onClick={toggleShowTimer}>Go to timer ></Button>
+        <button onClick={toggleShowTimer} type="button">
+          Go to timer >
+        </button>
       </div>
     );
   }

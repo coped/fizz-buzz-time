@@ -88,16 +88,16 @@ export default class Timer extends Component {
     const { toggleShowTimer } = this.props;
     return (
       <div id="Timer">
-        <Button id="to-options" onClick={toggleShowTimer}>
+        <button id="to-options" onClick={toggleShowTimer} type="button">
           {"< Set times"}
-        </Button>
+        </button>
         <h1 id="timer-output">{this.timerOutput()}</h1>
-        <Button id="start-timer" onClick={this.startTimer}>
+        <button id="start-timer" onClick={this.startTimer} type="button">
           Start timer
-        </Button>
-        <Button id="stop-timer" onClick={this.stopTimer}>
+        </button>
+        <button id="stop-timer" onClick={this.stopTimer} type="button">
           Stop / reset timer
-        </Button>
+        </button>
       </div>
     );
   }
