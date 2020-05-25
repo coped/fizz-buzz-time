@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { Button } from "components/common";
 
 export default class Timer extends Component {
   constructor(props) {
@@ -15,6 +14,7 @@ export default class Timer extends Component {
     this.incrementCount = this.incrementCount.bind(this);
     this.pad = this.pad.bind(this);
     this.timerOutput = this.timerOutput.bind(this);
+    this.fizzBuzzOutput = this.fizzBuzzOutput.bind(this);
     this.secondsToTime = this.secondsToTime.bind(this);
   }
 
@@ -29,8 +29,8 @@ export default class Timer extends Component {
   startTimer() {
     if (!this.state.counting) {
       this.countInterval = setInterval(this.incrementCount, 1000);
+      this.setState({ counting: true });
     }
-    this.setState({ counting: true });
   }
 
   stopTimer() {
@@ -59,16 +59,21 @@ export default class Timer extends Component {
   }
 
   secondsToTime(totalSeconds) {
+    const secondsIn = {
+      anHour: 3600,
+      aMinute: 60,
+    };
+
     let hours = 0;
     let minutes = 0;
     let seconds = 0;
-    if (totalSeconds >= 3600) {
-      hours = Math.floor(totalSeconds / 3600);
-      totalSeconds -= 3600 * hours;
+    if (totalSeconds >= secondsIn.anHour) {
+      hours = Math.floor(totalSeconds / secondsIn.anHour);
+      totalSeconds -= secondsIn.anHour * hours;
     }
-    if (totalSeconds >= 60) {
-      minutes = Math.floor(totalSeconds / 60);
-      totalSeconds -= 60 * minutes;
+    if (totalSeconds >= secondsIn.aMinute) {
+      minutes = Math.floor(totalSeconds / secondsIn.aMinute);
+      totalSeconds -= secondsIn.aMinute * minutes;
     }
     seconds = totalSeconds;
     return { hours, minutes, seconds };
@@ -79,8 +84,17 @@ export default class Timer extends Component {
   }
 
   timerOutput() {
+    return this.formattedTime(this.state.count);
+  }
+
+  fizzBuzzOutput() {
+    const { fizzBuzzValues } = this.props;
     let output = "";
-    output += this.formattedTime(this.state.count);
+    if (fizzBuzzValues && this.state.count !== 0) {
+      const { fizz, buzz } = fizzBuzzValues;
+      if (this.state.count % fizz === 0) output += "Fizz";
+      if (this.state.count % buzz === 0) output += "Buzz";
+    }
     return output;
   }
 
@@ -92,6 +106,7 @@ export default class Timer extends Component {
           {"< Set times"}
         </button>
         <h1 id="timer-output">{this.timerOutput()}</h1>
+        <h1 id="fizz-buzz-output">{this.fizzBuzzOutput()}</h1>
         <button id="start-timer" onClick={this.startTimer} type="button">
           Start timer
         </button>

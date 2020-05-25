@@ -9,6 +9,10 @@ export default class App extends Component {
 
     this.state = {
       showTimer: false,
+      fizzBuzzValues: {
+        fizz: 3,
+        buzz: 5,
+      },
     };
 
     this.toggleShowTimer = this.toggleShowTimer.bind(this);
@@ -21,17 +25,18 @@ export default class App extends Component {
 
   main() {
     if (this.state.showTimer) {
-      return <Timer toggleShowTimer={this.toggleShowTimer} />;
+      return (
+        <Timer
+          toggleShowTimer={this.toggleShowTimer}
+          fizzBuzzValues={this.state.fizzBuzzValues}
+        />
+      );
     } else {
       return <Options toggleShowTimer={this.toggleShowTimer} />;
     }
   }
 
   render() {
-    return (
-      <div id="App">
-        {this.main()}
-      </div>
-    );
+    return <div id="App">{this.main()}</div>;
   }
 }

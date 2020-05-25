@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { Button } from "components/common";
 
 export default class Options extends Component {
   constructor(props) {
