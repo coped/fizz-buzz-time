@@ -1,0 +1,57 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Timer has a valid snapshot 1`] = `
+<div
+  id="Timer"
+>
+  <button
+    className="button"
+    id="to-options"
+    type="button"
+  >
+    &lt; Set times
+  </button>
+  <div
+    className="timer"
+  >
+    <p
+      className="description"
+    >
+      Time Elapsed
+    </p>
+    <div
+      className="timer-container"
+    >
+      <p
+        id="timer-output"
+      >
+        0:00:00
+      </p>
+    </div>
+    <div
+      className="timer-buttons"
+    >
+      <button
+        className="timer-button start"
+        id="start-timer"
+        type="button"
+      >
+        Start
+      </button>
+      <button
+        className="timer-button stop"
+        id="stop-timer"
+        type="button"
+      >
+        Stop / reset
+      </button>
+    </div>
+    <p
+      className="bold"
+      id="fizz-buzz-output"
+    >
+      
+    </p>
+  </div>
+</div>
+`;

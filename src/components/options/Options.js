@@ -1,36 +1,44 @@
 import React from "react";
+import "./Options.scss";
 
 export default function Options(props) {
   const { toggleShowTimer, handleChange, fizz, buzz } = props;
   return (
     <div id="Options">
-      <p>
+      <p className="description">
         Please enter a fizz and buzz time in seconds.{" "}
-        <span className="bold">Values should be 2 to 10, inclusive</span>.
+        <strong>Values should be 2 to 10, inclusive.</strong>
       </p>
-      <div>
-        <label id="fizz-label" htmlFor="fizz">
+      <div className="fizz-buzz-fields">
+        <label id="fizz-label" htmlFor="fizz" className="label">
           Fizz:
         </label>
         <input
           id="fizz"
+          className="input"
           name="fizz"
           type="text"
           value={fizz}
           onChange={handleChange}
         />
-        <label id="buzz-label" htmlFor="buzz">
+        <label id="buzz-label" htmlFor="buzz" className="label">
           Buzz:
         </label>
         <input
           id="buzz"
+          className="input"
           name="buzz"
           type="text"
           value={buzz}
           onChange={handleChange}
         />
       </div>
-      <button id="to-timer" onClick={toggleShowTimer} type="button">
+      <button
+        id="to-timer"
+        onClick={toggleShowTimer}
+        type="button"
+        className="button"
+      >
         Go to timer >
       </button>
     </div>

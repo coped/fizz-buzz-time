@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "App.css";
+import "App.scss";
 import { Timer } from "components/timer";
 import { Options } from "components/options";
 

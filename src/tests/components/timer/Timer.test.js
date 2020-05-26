@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import renderer from "react-test-renderer";
-import Enzyme, { shallow, render, mount } from "enzyme";
+import Enzyme, { shallow } from "enzyme";
 import Adapter from "enzyme-adapter-react-16";
 import { Timer } from "components/timer";
 
@@ -111,9 +111,9 @@ describe("Timer", () => {
     });
   });
 
-  // it("has a valid snapshot", () => {
-  //   const component = renderer.create(<Timer />);
-  //   const tree = component.toJSON();
-  //   expect(tree).toMatchSnapshot();
-  // });
+  it("has a valid snapshot", () => {
+    const component = renderer.create(<Timer {...mockProps} />);
+    const tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
 });

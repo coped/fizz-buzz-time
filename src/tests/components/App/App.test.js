@@ -148,9 +148,9 @@ describe("App", () => {
     });
   });
 
-  // it("has a valid snapshot", () => {
-  //   const component = renderer.create(<App />);
-  //   const tree = component.toJSON();
-  //   expect(tree).toMatchSnapshot();
-  // });
+  it("has a valid snapshot", () => {
+    const component = renderer.create(<App />);
+    const tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
 });

@@ -1,0 +1,63 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App has a valid snapshot 1`] = `
+<div
+  id="App"
+>
+  <div
+    id="Options"
+  >
+    <p
+      className="description"
+    >
+      Please enter a fizz and buzz time in seconds.
+       
+      <strong>
+        Values should be 2 to 10, inclusive.
+      </strong>
+    </p>
+    <div
+      className="fizz-buzz-fields"
+    >
+      <label
+        className="label"
+        htmlFor="fizz"
+        id="fizz-label"
+      >
+        Fizz:
+      </label>
+      <input
+        className="input"
+        id="fizz"
+        name="fizz"
+        onChange={[Function]}
+        type="text"
+        value=""
+      />
+      <label
+        className="label"
+        htmlFor="buzz"
+        id="buzz-label"
+      >
+        Buzz:
+      </label>
+      <input
+        className="input"
+        id="buzz"
+        name="buzz"
+        onChange={[Function]}
+        type="text"
+        value=""
+      />
+    </div>
+    <button
+      className="button"
+      id="to-timer"
+      onClick={[Function]}
+      type="button"
+    >
+      Go to timer &gt;
+    </button>
+  </div>
+</div>
+`;

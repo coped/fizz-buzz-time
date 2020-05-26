@@ -1,7 +1,7 @@
 import React from "react";
+import "./Timer.scss";
 
 export default function Timer(props) {
-
   const timerOutput = (count) => {
     return formattedTime(count);
   };
@@ -55,17 +55,41 @@ export default function Timer(props) {
 
   return (
     <div id="Timer">
-      <button id="to-options" onClick={toggleShowTimer} type="button">
+      <button
+        id="to-options"
+        onClick={toggleShowTimer}
+        type="button"
+        className="button"
+      >
         {"< Set times"}
       </button>
-      <h1 id="timer-output">{timerOutput(count)}</h1>
-      <h1 id="fizz-buzz-output">{fizzBuzzOutput(fizz, buzz, count)}</h1>
-      <button id="start-timer" onClick={startTimer} type="button">
-        Start timer
-      </button>
-      <button id="stop-timer" onClick={stopTimer} type="button">
-        Stop / reset timer
-      </button>
+      <div className="timer">
+        <p className="description">Time Elapsed</p>
+        <div className="timer-container">
+          <p id="timer-output">{timerOutput(count)}</p>
+        </div>
+        <div className="timer-buttons">
+          <button
+            id="start-timer"
+            onClick={startTimer}
+            type="button"
+            className="timer-button start"
+          >
+            Start
+          </button>
+          <button
+            id="stop-timer"
+            onClick={stopTimer}
+            type="button"
+            className="timer-button stop"
+          >
+            Stop / reset
+          </button>
+        </div>
+        <p id="fizz-buzz-output" className="bold">
+          {fizzBuzzOutput(fizz, buzz, count)}
+        </p>
+      </div>
     </div>
   );
 }

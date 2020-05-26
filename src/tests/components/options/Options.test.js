@@ -41,9 +41,9 @@ describe("Options", () => {
     expect(wrapper.find(selectors.buzz).length).toEqual(1);
   });
 
-  // it("has a valid snapshot", () => {
-  //   const component = renderer.create(<Options />);
-  //   const tree = component.toJSON();
-  //   expect(tree).toMatchSnapshot();
-  // });
+  it("has a valid snapshot", () => {
+    const component = renderer.create(<Options />);
+    const tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
 });

@@ -1,0 +1,54 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Options has a valid snapshot 1`] = `
+<div
+  id="Options"
+>
+  <p
+    className="description"
+  >
+    Please enter a fizz and buzz time in seconds.
+     
+    <strong>
+      Values should be 2 to 10, inclusive.
+    </strong>
+  </p>
+  <div
+    className="fizz-buzz-fields"
+  >
+    <label
+      className="label"
+      htmlFor="fizz"
+      id="fizz-label"
+    >
+      Fizz:
+    </label>
+    <input
+      className="input"
+      id="fizz"
+      name="fizz"
+      type="text"
+    />
+    <label
+      className="label"
+      htmlFor="buzz"
+      id="buzz-label"
+    >
+      Buzz:
+    </label>
+    <input
+      className="input"
+      id="buzz"
+      name="buzz"
+      type="text"
+    />
+  </div>
+  <button
+    className="button"
+    id="to-timer"
+    type="button"
+  >
+    Go to timer &gt;
+  </button>
+</div>
+`;
