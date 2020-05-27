@@ -1,28 +1,48 @@
 #App {
   display: flex;
   height: 100vh;
-}
+  width: 100vw;
 
-.bold {
-  font-weight: bold;
-}
+  .bold {
+    font-weight: bold;
+  }
 
-.button {
-  border: 2px solid #707070;
-  color: #707070;
-  padding: 15px 30px;
-  text-align: center;
-  font-size: 16px;
-  font-weight: bold;
-  cursor: pointer;
-  border-radius: 5px;
-}
+  .button {
+    border: 2px solid #707070;
+    color: #707070;
+    padding: 15px 30px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+  }
 
-.description {
-  font-size: 30px;
-}
+  .description {
+    font-size: 30px;
+  }
 
-/* this class is for testing purposes */
-.test {
-  color: blue;
+  /* this class is for testing purposes */
+  .test {
+    color: blue;
+  }
+
+  /* Transition classes for ReactCSSTransitionGroup */
+  .example-enter {
+    opacity: 0.01;
+  }
+
+  .example-enter.example-enter-active {
+    opacity: 1;
+    transition: opacity 500ms ease-in;
+  }
+
+  .example-leave {
+    opacity: 1;
+  }
+
+  .example-leave.example-leave-active {
+    opacity: 0.01;
+    transition: opacity 300ms ease-in;
+  }
 }

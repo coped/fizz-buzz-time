@@ -2,7 +2,8 @@ import React from "react";
 import "./Options.scss";
 
 export default function Options(props) {
-  const { toggleShowTimer, handleChange, fizz, buzz } = props;
+  const { toggleShowTimer, handleChange, fizz, buzz, count } = props;
+  const isDisabled = count > 0 ? true : false;
   return (
     <div id="Options">
       <p className="description">
@@ -20,6 +21,7 @@ export default function Options(props) {
           type="text"
           value={fizz}
           onChange={handleChange}
+          disabled={isDisabled}
         />
         <label id="buzz-label" htmlFor="buzz" className="label">
           Buzz:
@@ -31,6 +33,7 @@ export default function Options(props) {
           type="text"
           value={buzz}
           onChange={handleChange}
+          disabled={isDisabled}
         />
       </div>
       <button

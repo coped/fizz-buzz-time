@@ -28,6 +28,7 @@ exports[`App has a valid snapshot 1`] = `
       </label>
       <input
         className="input"
+        disabled={false}
         id="fizz"
         name="fizz"
         onChange={[Function]}
@@ -43,6 +44,7 @@ exports[`App has a valid snapshot 1`] = `
       </label>
       <input
         className="input"
+        disabled={false}
         id="buzz"
         name="buzz"
         onChange={[Function]}

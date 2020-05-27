@@ -146,6 +146,22 @@ describe("App", () => {
       });
       expect(wrapper.state().buzz).toEqual("5");
     });
+
+    it("disables fizz input once time has progressed", () => {
+      const wrapper = mount(<App />);
+      const fizzInput = wrapper.find(selectors.fizz);
+      expect(fizzInput.getDOMNode().disabled).toEqual(false);
+      wrapper.setState({ count: 1 });
+      expect(fizzInput.getDOMNode().disabled).toEqual(true);
+    });
+
+    it("disables buzz input once time has progressed", () => {
+      const wrapper = mount(<App />);
+      const buzzInput = wrapper.find(selectors.buzz);
+      expect(buzzInput.getDOMNode().disabled).toEqual(false);
+      wrapper.setState({ count: 1 });
+      expect(buzzInput.getDOMNode().disabled).toEqual(true);
+    });
   });
 
   it("has a valid snapshot", () => {

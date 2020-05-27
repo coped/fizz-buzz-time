@@ -25,6 +25,7 @@ exports[`Options has a valid snapshot 1`] = `
     </label>
     <input
       className="input"
+      disabled={false}
       id="fizz"
       name="fizz"
       type="text"
@@ -38,6 +39,7 @@ exports[`Options has a valid snapshot 1`] = `
     </label>
     <input
       className="input"
+      disabled={false}
       id="buzz"
       name="buzz"
       type="text"

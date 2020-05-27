@@ -63,29 +63,35 @@ export default class App extends Component {
     });
   }
 
-  render() {
+  showTimerOrOptions(showTimer) {
     const { count, counting, fizz, buzz } = this.state;
-    return (
-      <div id="App">
-        {this.state.showTimer ? (
-          <Timer
-            toggleShowTimer={this.toggleShowTimer}
-            count={count}
-            counting={counting}
-            startTimer={this.startTimer}
-            stopTimer={this.stopTimer}
-            fizz={fizz}
-            buzz={buzz}
-          />
-        ) : (
-          <Options
-            toggleShowTimer={this.toggleShowTimer}
-            handleChange={this.handleChange}
-            fizz={this.state.fizz}
-            buzz={this.state.buzz}
-          />
-        )}
-      </div>
-    );
+    if (showTimer) {
+      return (
+        <Timer
+          key="timer"
+          toggleShowTimer={this.toggleShowTimer}
+          count={count}
+          counting={counting}
+          startTimer={this.startTimer}
+          stopTimer={this.stopTimer}
+          fizz={fizz}
+          buzz={buzz}
+        />
+      );
+    } else {
+      return (
+        <Options
+          key="options"
+          toggleShowTimer={this.toggleShowTimer}
+          handleChange={this.handleChange}
+          count={count}
+          fizz={fizz}
+          buzz={buzz}
+        />
+      );
+    }
+  }
+  render() {
+    return <div id="App">{this.showTimerOrOptions(this.state.showTimer)}</div>;
   }
 }
